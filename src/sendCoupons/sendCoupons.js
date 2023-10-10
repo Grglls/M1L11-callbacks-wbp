@@ -54,3 +54,12 @@ module.exports = {
   updateUserCouponSent,
   sendAllCoupons,
 };
+
+function sendAllCoupons(argument, canSendCoupon, sendCoupon, updateUserCouponSent) {
+  for (let i = 0; i < argument.length; i++){
+    if (canSendCoupon(argument[i])) {
+      sendCoupon(argument[i]);
+      updateUserCouponSent(argument[i]);
+    };
+  };
+};

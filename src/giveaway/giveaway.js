@@ -29,3 +29,15 @@ module.exports = {
   determineCouponRecipients,
   isEligibleForCoupon,
 };
+
+function determineCouponRecipients(argument, isEligibleForCoupon) {
+  const listOfEligible = [];
+
+  for (let i = 0; i < argument.length; i++) {
+    if (isEligibleForCoupon(argument[i])) {
+      listOfEligible.push(argument[i]);
+    }
+  };
+
+  return listOfEligible;
+}

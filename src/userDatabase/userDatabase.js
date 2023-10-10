@@ -8,12 +8,12 @@ const UserDatabase = {
   users: [],
 
   // SOLUTION: this keyword is not bound to the UserDatabase since this was an arrow function
-  addUser: (name, id, phone) => {
+  addUser: function(name, id, phone) {
     this.users.push({ name, id , phone, hasCoupon: false, isEnrolledInRewards: false});
   },
 
   // what is wrong with this function?
-  function loadFromFile : () => {
+  loadFromFile: function() {
     const usersFromFile = require("../../util/userDatabase/usersdb.json");
     this.users = usersFromFile;
   },
